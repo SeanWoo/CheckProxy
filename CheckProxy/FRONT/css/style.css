@@ -11,6 +11,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
   outline: none !important;
+  -webkit-tap-highlight-color: transparent;
 }
 
 a {
@@ -30,9 +31,47 @@ body {
   min-height: 100vh;
 }
 
+body.darkbody {
+  background: #121212;
+}
+
+body.darkbody header nav ul .btns .btn {
+  color: #ffffff;
+}
+
+body.darkbody #welcome {
+  color: #ffffff;
+}
+
+body.darkbody #welcome #w-2 .block {
+  background: #1d1d1d;
+}
+
+body.darkbody #proxy-checker {
+  color: #ffffff;
+}
+
+body.darkbody #proxy-checker textarea {
+  background: #1d1d1d !important;
+  color: #b9b9b9;
+}
+
+body.darkbody #port-checker {
+  color: #ffffff;
+}
+
+body.darkbody #port-checker .port-input input[type=text] {
+  background: #1d1d1d !important;
+  color: #b9b9b9 !important;
+}
+
+body.darkbody #port-checker #port-form input[type=text] {
+  background: #1d1d1d !important;
+  color: #b9b9b9 !important;
+}
+
 header {
   padding: 50px 15vw;
-  background-color: #ffffff;
   color: #000000;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -60,6 +99,12 @@ header nav ul {
           align-items: center;
 }
 
+header nav ul #theme-switcher p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 header nav ul #logo {
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
@@ -72,6 +117,17 @@ header nav ul #logo {
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+@media screen and (max-width: 768px) {
+  header nav ul #logo:active {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
 }
 
 header nav ul .btns {
@@ -81,12 +137,6 @@ header nav ul .btns {
   color: #292929;
 }
 
-@media screen and (max-width: 768px) {
-  header nav ul .btns {
-    display: none;
-  }
-}
-
 header nav ul .btns .btn {
   margin-left: 30px;
   cursor: pointer;
@@ -94,6 +144,17 @@ header nav ul .btns .btn {
   transition: 0.3s;
   position: relative;
   color: #000000;
+}
+
+@media screen and (max-width: 768px) {
+  header nav ul .btns .btn {
+    display: none;
+  }
+  header nav ul .btns .btn#theme-switcher {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 header nav ul .btns .btn:before {
@@ -111,11 +172,13 @@ header nav ul .btns .btn:before {
   transition: 0.3s;
 }
 
-header nav ul .btns .btn:hover:before {
-  width: 20px;
-  background: #292929;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+@media screen and (min-width: 768px) {
+  header nav ul .btns .btn:hover:before {
+    width: 20px;
+    background: #292929;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
 }
 
 header nav ul .btns .btn i {
@@ -259,6 +322,20 @@ main #welcome #w-2 .block {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   min-height: 183px;
+  position: relative;
+}
+
+main #welcome #w-2 .block .content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+main #welcome #w-2 .block .fa-cloud {
+  font-size: 2em;
+  margin-bottom: 15px;
 }
 
 @media screen and (max-width: 768px) {
@@ -313,7 +390,7 @@ main #welcome #w-2 .block .btn i {
 }
 
 main #welcome #w-2 .block p {
-  margin-bottom: 15px;
+  margin-bottom: 7px;
 }
 
 main #welcome #w-2 .block:last-child {
@@ -592,7 +669,6 @@ footer {
   bottom: 0;
   left: 0;
   padding: 15px 15vw;
-  background-color: #ffffff;
   color: #5f5f5f;
   -webkit-user-select: none;
      -moz-user-select: none;
