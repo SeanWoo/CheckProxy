@@ -39,6 +39,30 @@ body.darkbody header nav ul .btns .btn {
   color: #ffffff;
 }
 
+body.darkbody header nav ul .btns .btn:before {
+  width: 0px;
+  height: 2px;
+  border-radius: 30px;
+  position: absolute;
+  background: none;
+  content: "";
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 25px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+@media screen and (min-width: 768px) {
+  body.darkbody header nav ul .btns .btn:hover:before {
+    width: 20px;
+    background: #ffffff;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+}
+
 body.darkbody #welcome {
   color: #ffffff;
 }
@@ -66,6 +90,16 @@ body.darkbody #port-checker .port-input input[type=text] {
 }
 
 body.darkbody #port-checker #port-form input[type=text] {
+  background: #1d1d1d !important;
+  color: #b9b9b9 !important;
+}
+
+body.darkbody #port-checker #port-results ul li {
+  background: #1d1d1d !important;
+  color: #b9b9b9 !important;
+}
+
+body.darkbody #proxy-results ul li {
   background: #1d1d1d !important;
   color: #b9b9b9 !important;
 }
@@ -117,8 +151,6 @@ header nav ul #logo {
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
 }
 
 @media screen and (max-width: 768px) {
@@ -138,12 +170,11 @@ header nav ul .btns {
 }
 
 header nav ul .btns .btn {
-  margin-left: 30px;
+  margin-left: 20px;
   cursor: pointer;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
   position: relative;
   color: #000000;
+  white-space: nowrap;
 }
 
 @media screen and (max-width: 768px) {
@@ -319,8 +350,6 @@ main #welcome #w-2 .block {
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
   min-height: 183px;
   position: relative;
 }
@@ -346,16 +375,6 @@ main #welcome #w-2 .block .fa-cloud {
 
 main #welcome #w-2 .block:last-child {
   margin-bottom: 0;
-}
-
-main #welcome #w-2 .block:hover {
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  cursor: pointer;
-  -webkit-transform: translateY(-10px);
-          transform: translateY(-10px);
-  -webkit-box-shadow: 0px 7px 20px 0px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 7px 20px 0px rgba(0, 0, 0, 0.1);
 }
 
 main #welcome #w-2 .block img {
@@ -395,6 +414,41 @@ main #welcome #w-2 .block p {
 
 main #welcome #w-2 .block:last-child {
   margin-right: 0;
+}
+
+main #proxy-checker #proxy-results h1 {
+  margin-bottom: 30px;
+}
+
+main #proxy-checker #proxy-results ul {
+  list-style: none;
+  width: 100%;
+}
+
+main #proxy-checker #proxy-results ul li {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 302.8px;
+  display: block;
+  border-radius: 25px;
+  border: none;
+  color: #78838f;
+  background: #ffffff;
+  -webkit-box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.1);
+  padding: 17.2px 25px;
+  font-size: 1.3em;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  main #proxy-checker #proxy-results ul li {
+    width: 1000px;
+    max-width: 100%;
+  }
 }
 
 main #proxy-checker .header {
@@ -462,8 +516,6 @@ main #proxy-checker #proxy-form textarea {
           box-sizing: border-box;
   margin-bottom: 30px;
   position: relative;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
   resize: none;
 }
 
@@ -516,6 +568,45 @@ main #port-checker #ports-header span {
           user-select: none;
 }
 
+main #port-checker #port-results h1 {
+  margin-bottom: 30px;
+}
+
+main #port-checker #port-results ul {
+  list-style: none;
+  width: 100%;
+}
+
+main #port-checker #port-results ul li {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 302.8px;
+  display: block;
+  border-radius: 25px;
+  border: none;
+  color: #78838f;
+  background: #ffffff;
+  -webkit-box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.1);
+  padding: 17.2px 25px;
+  font-size: 1.3em;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  main #port-checker #port-results ul li {
+    width: 1000px;
+    max-width: 100%;
+  }
+}
+
+main #port-checker #submitportsbtn {
+  margin-bottom: 15px;
+}
+
 main #port-checker #port-form .port-input {
   position: relative;
   width: -webkit-fit-content;
@@ -525,12 +616,15 @@ main #port-checker #port-form .port-input {
 
 main #port-checker #port-form .port-input i {
   position: absolute;
-  right: 15px;
+  right: 5px;
+  -webkit-box-shadow: -10px 0px 10px -2px rgba(0, 0, 0, 0.1);
+          box-shadow: -10px 0px 10px -2px rgba(0, 0, 0, 0.1);
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   color: #fc7268;
   cursor: pointer;
+  padding: 20px;
 }
 
 main #port-checker #port-form input[type=submit] {
@@ -562,6 +656,11 @@ main #port-checker #port-form input[type=text] {
           box-sizing: border-box;
   margin-bottom: 30px;
   position: relative;
+}
+
+main #port-checker #port-form input[type=text]:focus {
+  -webkit-box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.2);
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -618,6 +717,7 @@ main #addportbtn {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  margin-bottom: 15px;
 }
 
 main #addpopportsbtn {
@@ -677,12 +777,16 @@ main #usemyipbtn {
             transform: scale(1);
     height: -webkit-fit-content;
     height: fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
   }
   100% {
     opacity: 0;
     -webkit-transform: scale(0.9);
             transform: scale(0.9);
     height: 0;
+    width: -webkit-fit-content;
+    width: fit-content;
   }
 }
 
@@ -694,12 +798,18 @@ main #usemyipbtn {
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
   100% {
     opacity: 0;
     -webkit-transform: scale(0.9);
             transform: scale(0.9);
     height: 0;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
 }
 
@@ -795,8 +905,6 @@ footer nav ul .btns {
 footer nav ul .btns .btn {
   margin-left: 30px;
   cursor: pointer;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
 }
 
 @media screen and (max-width: 768px) {
@@ -809,5 +917,17 @@ footer nav ul .btns .btn:hover {
   opacity: 0.8;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ededed;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ae62e3;
 }
 /*# sourceMappingURL=style.css.map */
