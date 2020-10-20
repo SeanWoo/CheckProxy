@@ -12,24 +12,22 @@ namespace CheckProxy.Pages
     {
         private ICore _core;
 
-        private string _ip;
-        private List<int> _ports;
-
         [BindProperty]
         public string IP { get; set; }
         [BindProperty]
-        public string Ports { get; set; }
+        public List<string> Ports { get; set; }
+
+        public List<string> OpenPorts { get; set; }
 
         public CheckPortModel(ICore core) => _core = core;
-
         public void OnGetAsync()
         {
-
+            OpenPorts = new List<string>();
         }
-
         public void OnPostAsync()
         {
-            
+            //TODO: Process ports on the core.
+            OpenPorts = Ports;
         }
     }
 }

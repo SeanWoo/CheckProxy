@@ -16,16 +16,19 @@ namespace CheckProxy.Pages
         [BindProperty]
         public string Proxys { get; set; }
 
+        public List<string> ValidProxy { get; set; }
+
         public CheckProxyModel(ICore core) => _core = core;
         public void OnGetAsync()
         {
-
+            ValidProxy = new List<string>();
         }
 
         public void OnPostAsync()
         {
             _proxys = Proxys.Split('\n').Select(x => x.Split(' ')).ToList();
-
+            //TODO: Process proxy on the core.
+            ValidProxy = _proxys.Select(x => x[0]).ToList();
         }
     }
 }

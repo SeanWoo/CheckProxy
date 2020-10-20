@@ -27,7 +27,7 @@ function addport(port){
         ++portsnumber
         portslist.insertAdjacentHTML('beforeend',
         `<div class="port-input" data-port='`+portsnumber+`'>
-            <input type="text" maxlength="5" placeholder="00000">
+            <input type="text" name="Ports" maxlength="5" placeholder="00000">
             <i data-removeport='`+portsnumber+`' class="fas fa-trash-alt"></i>
         </div>`
         )
@@ -43,7 +43,7 @@ function addport(port){
         ++portsnumber
         portslist.insertAdjacentHTML('beforeend',
         `<div class="port-input" data-port='`+portsnumber+`'>
-            <input type="text" maxlength="5" placeholder="00000" value='`+port+`'>
+            <input type="text" name="Ports" maxlength="5" placeholder="00000" value='`+port+`'>
             <i data-removeport='`+portsnumber+`' class="fas fa-trash-alt"></i>
         </div>`
         )
@@ -74,7 +74,7 @@ function removeport(a){
 addpopportsbtn.addEventListener('click',()=>{
     if(popportsnumber==0){
         addpopportsbtn.classList.add('locked')
-        let popports = ['8080','3000','5500']
+        let popports = ['21', '22', '25', '80', '443', '3128', '8080','3000','5500']
         popportsnumber = popports.length
         let ports = document.getElementsByClassName('port-input')
 

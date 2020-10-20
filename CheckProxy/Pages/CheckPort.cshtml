@@ -2,10 +2,36 @@
 @model CheckProxy.Pages.CheckPortModel
 @{
 }
-<h1> Проверка портов</h1>
-
-<form method="post">
-    <input type="text" name="IP" id="IP" />
-    <input type="text" name="Ports" id="Ports" />
-    <input type="submit" name="Отправить" />
-</form>
+<article id="port-checker">
+    <h1 class="header">Port checker</h1>
+    <p class="description">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, <br> expedita eveniet sit voluptates incidunt quibusdam et eligendi culpa <br> rerum qui quos nam laboriosam iste quidem cumque molestias? Amet, necessitatibus minus!
+    </p>
+    <form id="port-form" method="post">
+        <h1>Server IP:</h1>
+        <p id="usemyipbtn">Use my IP</p>
+        <input type="text" name="IP" id="ipinput" placeholder="255.255.255.255">
+        <h1 id="ports-header">Ports:</h1>
+        <p id="addpopportsbtn">+ Add popular ports</p>
+        <p id="addportbtn">+ Add port</p>
+        <div id="ports-list">
+            <div class="port-input">
+                <input type="text" name="IP" maxlength="5" data-port="1" placeholder="00000">
+            </div>
+        </div>
+        <input type="submit" value="Let's check!">
+    </form>
+    <div id="port-results">
+        <h1>Results:</h1>
+        <ul>
+            @foreach (var port in Model.OpenPorts)
+            {
+                <li>@port is open</li>
+            }
+        </ul>
+    </div>
+</article>
+@section Scripts
+{
+    <script src="~/js/ports.js"></script>
+}

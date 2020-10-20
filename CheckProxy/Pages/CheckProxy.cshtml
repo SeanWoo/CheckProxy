@@ -2,4 +2,24 @@
 @model CheckProxy.Pages.CheckProxyModel
 @{
 }
-<h1>Проверка прокси</h1>
+<article id="proxy-checker">
+    <h1 class="header">Proxy checker</h1>
+    <p class="description">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, <br> expedita eveniet sit voluptates incidunt quibusdam et eligendi culpa <br> rerum qui quos nam laboriosam iste quidem cumque molestias? Amet, necessitatibus minus!
+    </p>
+    <form id="proxy-form" method="post">
+        <h1 id="proxy-header">Proxy: </h1>
+        <textarea name="Proxys" id="" cols="50" rows="100" placeholder="Proxy in any format divided by , :)"></textarea>
+        <br>
+        <input id="submitportsbtn" type="submit" value="Let's check!">
+    </form>
+    <div id="proxy-results">
+        <h1>Results:</h1>
+        <ul>
+            @foreach (var proxy in Model.ValidProxy)
+            {
+                <li>@proxy is valid</li>
+            }
+        </ul>
+    </div>
+</article>

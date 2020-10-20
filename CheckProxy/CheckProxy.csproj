@@ -5,7 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Html\" />
+    <None Include="wwwroot\css\style.css" />
+    <None Include="wwwroot\css\style.css.map" />
+    <None Include="wwwroot\css\style.sass" />
+    <None Include="wwwroot\fonts\fonts.css" />
+    <None Include="wwwroot\fonts\fonts.css.map" />
+    <None Include="wwwroot\fonts\fonts.sass" />
+    <None Include="wwwroot\img\cloud-icon.png" />
+    <None Include="wwwroot\img\ph1.jpg" />
+    <None Include="wwwroot\img\ph1.xcf" />
+    <None Include="wwwroot\img\secure-icon.png" />
+    <None Include="wwwroot\js\darktheme.js" />
+    <None Include="wwwroot\js\ports.js" />
   </ItemGroup>
 
 </Project>
